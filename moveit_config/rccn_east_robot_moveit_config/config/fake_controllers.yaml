@@ -1,0 +1,23 @@
+controller_list:
+  - name: fake_east_robot_eax_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - east_joint_e1
+      - east_joint_a1
+      - east_joint_a2
+      - east_joint_a3
+      - east_joint_a4
+      - east_joint_a5
+      - east_joint_a6
+  - name: fake_east_robot_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - east_joint_a1
+      - east_joint_a2
+      - east_joint_a3
+      - east_joint_a4
+      - east_joint_a5
+      - east_joint_a6
+initial:  # Define initial robot poses per group
+  - group: east_robot_eax
+    pose: east_robot_eax_home_0

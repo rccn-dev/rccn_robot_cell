@@ -1,0 +1,17 @@
+<launch>
+  <!-- The rpy in the comment uses the extrinsic XYZ convention, which is the same as is used in a URDF. See
+       http://wiki.ros.org/geometry2/RotationMethods and https://en.wikipedia.org/wiki/Euler_angles for more info. -->
+  <!-- xyz="0.0374348 -0.326142 0.227299" rpy="0.852264 0.0669438 2.88124" -->
+  <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster"
+      args="0.0374348 -0.326142 0.227299   0.0838426 -0.405669 0.904157 0.10442 west_tool0 cam_0_color_optical_frame 10" />
+  <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster_1"
+      args="0 0 0 0 0 0 1 cam_0_color_optical_frame cam_0_color_frame 10" />
+  <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster_2"
+      args="0 0 0 0 0 0 1 cam_0_color_optical_frame cam_0_depth_frame 10" />
+  <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster_3"
+      args="0 0 0 0 0 0 1 cam_0_color_optical_frame cam_0_depth_optical_frame 10 " />
+  <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster_4"
+      args="0 0 0 0 0 0 1 cam_0_color_optical_frame cam_0_link 10" />
+  <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster_5"
+      args="0 0 0 0 0 0 1 cam_0_color_optical_frame cam_0_aligned_depth_to_color_frame 10" />
+</launch>

@@ -1,0 +1,55 @@
+controller_joint_names:
+    - west_joint_e1
+    - west_joint_a1
+    - west_joint_a2
+    - west_joint_a3
+    - west_joint_a4
+    - west_joint_a5
+    - west_joint_a6
+#Publish all joint states
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 10
+
+# Joint trajectory controller
+position_trajectory_controller:
+  type: "position_controllers/JointGroupPositionController"
+  joints:
+    - west_joint_e1
+    - west_joint_a1
+    - west_joint_a2
+    - west_joint_a3
+    - west_joint_a4
+    - west_joint_a5
+    - west_joint_a6
+    
+# Joint trajectory controller
+robot_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - west_joint_e1
+    - west_joint_a1
+    - west_joint_a2
+    - west_joint_a3
+    - west_joint_a4
+    - west_joint_a5
+    - west_joint_a6
+
+  #state_publish_rate: 50 # Defaults to 50
+  #action_monitor_rate: 20 # Defaults to 20
+
+controller_list:
+  - name: "/move_group/robot_controller"
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints: 
+    - west_joint_e1
+    - west_joint_a1
+    - west_joint_a2
+    - west_joint_a3
+    - west_joint_a4
+    - west_joint_a5
+    - west_joint_a6
+
+Robot_IP: "192.168.1.202"
+Robot_Port: 7000

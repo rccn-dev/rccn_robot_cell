@@ -1,0 +1,11 @@
+controller_list:
+  - name: fake_west_robot_eax_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - west_joint_e1
+      - west_joint_a1
+      - west_joint_a2
+      - west_joint_a3
+      - west_joint_a4
+      - west_joint_a5
+      - west_joint_a6

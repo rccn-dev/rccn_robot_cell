@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: rccn_kuka_robot_cell
+    relative_path: urdf/rccn_east_robot.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/rccn_east_robot.srdf
+  CONFIG:
+    author_name: Chia-Ching Yen
+    author_email: ccyen@umich.edu
+    generated_timestamp: 1660630015
