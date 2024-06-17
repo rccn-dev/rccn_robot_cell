@@ -11,7 +11,7 @@
             </visual>
             <collision>
                 <geometry>
-                    <mesh scale="0.001 0.001 0.001" filename="package://rccn_kuka_robot_cell/meshes/world/collision/robot_cell_fixture.stl"/>
+                    <mesh scale="0.001 0.001 0.001" filename="package://rccn_kuka_robot_cell/meshes/world/collision/floor.stl"/>
                 </geometry>
             </collision>
         </link>
