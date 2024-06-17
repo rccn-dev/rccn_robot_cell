@@ -55,7 +55,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rccn_kuka_robot_cell/meshes/rail/collision/east_plate.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://rccn_kuka_robot_cell/meshes/rail/collision/east_plate_no_servo.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -334,7 +334,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rccn_kuka_robot_cell/meshes/rail/collision/west_plate.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://rccn_kuka_robot_cell/meshes/rail/collision/west_plate_no_servo.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
