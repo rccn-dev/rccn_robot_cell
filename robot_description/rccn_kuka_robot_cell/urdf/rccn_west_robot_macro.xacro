@@ -3,7 +3,7 @@
         <xacro:macro name="rccn_west_robot" params="prefix">
             <xacro:property name="west_prefix" value="west_" />
 
-            <xacro:include filename="$(find kuka_kr300_support)/urdf/kr300r2500pro_macro.xacro" />
+            <xacro:include filename="$(find kuka_kr300_support)/urdf/kr300r2500ultra_macro.xacro" />
 
             <link name="${prefix}west_e1_rail">
                 <visual>
@@ -54,7 +54,7 @@
                 <origin xyz="-0.00043000 -0.00044000 -0.00000000" rpy="0.00000184 0.00009015 0.00206101" />
             </joint>
 
-            <!-- kuka kr300 r2500 pro -->
-            <xacro:kuka_kr300r2500pro prefix="${west_prefix}"/>
+            <!-- kuka kr 300 r2500 ultra -->
+            <xacro:kuka_kr300r2500ultra prefix="${west_prefix}"/>
         </xacro:macro>
     </robot>
