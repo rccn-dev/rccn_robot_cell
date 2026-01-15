@@ -3,7 +3,7 @@
         <xacro:macro name="rccn_east_robot" params="prefix">
             <xacro:property name="east_prefix" value="east_" />
 
-            <xacro:include filename="$(find kuka_kr300_support)/urdf/kr300r2500ultra_macro.xacro" />
+            <xacro:include filename="$(find-pkg-share kuka_kr300_support)/urdf/kr300r2500ultra_macro.xacro" />
 
             <link name="${prefix}east_e1_rail">
                 <visual>

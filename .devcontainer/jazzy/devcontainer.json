@@ -1,0 +1,24 @@
+{
+    "name": "ROS 2 Jazzy",
+    "image": "osrf/ros:jazzy-desktop",
+    "runArgs": [
+        "--network=host",
+        "--ipc=host",
+        "--pid=host",
+        "--privileged"
+    ],
+    "containerEnv": {
+        "DISPLAY": "host.docker.internal:0"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-iot.vscode-ros",
+                "ms-python.python",
+                "ms-vscode.cpptools",
+                "twxs.cmake"
+            ]
+        }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y python3-colcon-common-extensions && echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc && git config --global --add safe.directory ${containerWorkspaceFolder}"
+}
