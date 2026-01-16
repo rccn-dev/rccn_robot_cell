@@ -18,7 +18,7 @@
 
         <!--KUKA East Robot-->
         <xacro:property name="east_prefix" value="east_" />
-        <xacro:include filename="$(find-pkg-share rccn_kuka_robot_cell)/urdf/rccn_east_robot_macro.xacro"/>
+        <xacro:include filename="$(find rccn_kuka_robot_cell)/urdf/rccn_east_robot_macro.xacro"/>
         <xacro:rccn_east_robot prefix=""/>
         <joint name="${east_prefix}world_joint" type="fixed">
             <parent link="kuka_robot_cell_world" />
@@ -28,7 +28,7 @@
         
         <!--KUKA West Robot-->
         <xacro:property name="west_prefix" value="west_" />
-        <xacro:include filename="$(find-pkg-share rccn_kuka_robot_cell)/urdf/rccn_west_robot_macro.xacro"/>
+        <xacro:include filename="$(find rccn_kuka_robot_cell)/urdf/rccn_west_robot_macro.xacro"/>
         <xacro:rccn_west_robot prefix=""/>
         <joint name="${west_prefix}world_joint" type="fixed">
             <parent link="kuka_robot_cell_world" />
