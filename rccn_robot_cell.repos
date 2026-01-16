@@ -1,0 +1,10 @@
+# VCS (vcstool) manifest for source-only dependencies.
+#
+# Usage:
+#   mkdir -p src
+#   vcs import src < rccn_robot_cell.repos
+
+repositories:
+  kuka_kr300_support:
+    type: git
+    url: https://github.com/rccn-dev/kuka_kr300_support.git
