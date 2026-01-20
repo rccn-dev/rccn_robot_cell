@@ -37,9 +37,4 @@ install_isolated/
 *.creator
 *.user
 
-# Dependency specific ignores
-# Add any other dependency specific build artifacts here
-
-# Editor/IDE specific ignores
-# Add any editor or IDE specific files to ignore here
-
+cyclonedds.xml

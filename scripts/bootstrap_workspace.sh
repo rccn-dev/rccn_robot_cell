@@ -51,6 +51,11 @@ done
 
 cd "${WORKSPACE_DIR}"
 
+if [[ ! -f "cyclonedds.xml" && -f "cyclonedds.xml.template" ]]; then
+  echo "Creating cyclonedds.xml from template..."
+  cp cyclonedds.xml.template cyclonedds.xml
+fi
+
 # Ensure ROS environment is sourced (helps rosdep pick ROS_DISTRO + colcon find packages)
 if [[ -z "${ROS_DISTRO:-}" ]]; then
   if [[ -d /opt/ros/humble ]]; then
