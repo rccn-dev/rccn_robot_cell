@@ -1,0 +1,17 @@
+# Default initial positions for rccn_kuka_robot_cell's ros2_control fake system
+
+initial_positions:
+  east_joint_a1: 0
+  east_joint_a2: -2.0943951
+  east_joint_a3: 2.0943951
+  east_joint_a4: 0
+  east_joint_a5: 0
+  east_joint_a6: 0
+  east_joint_e1: 0
+  west_joint_a1: 0
+  west_joint_a2: -2.0943951
+  west_joint_a3: 2.0943951
+  west_joint_a4: 0
+  west_joint_a5: 0
+  west_joint_a6: 0
+  west_joint_e1: 0

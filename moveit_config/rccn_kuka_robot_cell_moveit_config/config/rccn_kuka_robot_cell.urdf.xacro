@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rccn_kuka_robot_cell">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import rccn_kuka_robot_cell urdf file -->
+    <xacro:include filename="$(find rccn_kuka_robot_cell)/urdf/rccn_kuka_robot_cell.urdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="rccn_kuka_robot_cell.ros2_control.xacro" />
+
+
+    <xacro:rccn_kuka_robot_cell_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>
