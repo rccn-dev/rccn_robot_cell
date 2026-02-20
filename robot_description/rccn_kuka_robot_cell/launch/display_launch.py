@@ -5,6 +5,7 @@ from launch.actions import DeclareLaunchArgument
 from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
+from launch_ros.descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -31,12 +32,14 @@ def generate_launch_description():
         description="RViz config file",
     )
 
-    robot_description = Command(["xacro", LaunchConfiguration("model")])
+    # Ensure the xacro output becomes a plain string parameter
+    robot_description = ParameterValue(Command(["xacro ", LaunchConfiguration("model")]), value_type=str)
 
     joint_state_publisher_gui_node = Node(
         package="joint_state_publisher_gui",
         executable="joint_state_publisher_gui",
         name="joint_state_publisher",
+        parameters=[{"robot_description": robot_description}],
         condition=IfCondition(LaunchConfiguration("gui")),
     )
 
@@ -44,6 +47,7 @@ def generate_launch_description():
         package="joint_state_publisher",
         executable="joint_state_publisher",
         name="joint_state_publisher",
+        parameters=[{"robot_description": robot_description}],
         condition=UnlessCondition(LaunchConfiguration("gui")),
     )
 
@@ -59,6 +63,7 @@ def generate_launch_description():
         executable="rviz2",
         name="rviz2",
         arguments=["-d", LaunchConfiguration("rvizconfig")],
+        parameters=[{"robot_description": robot_description}],
         output="screen",
     )
 
