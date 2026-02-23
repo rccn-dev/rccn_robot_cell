@@ -14,6 +14,10 @@
                     <mesh scale="0.001 0.001 0.001" filename="package://rccn_kuka_robot_cell/meshes/world/collision/floor.stl"/>
                 </geometry>
             </collision>
+            <inertial>
+                <mass value="100.0"/> <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia ixx="10.0" ixy="0.0" ixz="0.0" iyy="10.0" iyz="0.0" izz="10.0"/>
+            </inertial>
         </link>
 
         <!--KUKA East Robot-->

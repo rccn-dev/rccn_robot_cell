@@ -19,6 +19,10 @@
                         <mesh scale="0.001 0.001 0.001" filename="package://rccn_kuka_robot_cell/meshes/rail/collision/east_rail.stl"/>
                     </geometry>
                 </collision>
+                <inertial>
+                    <mass value="1.0"/> <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <inertia ixx="10.0" ixy="0.0" ixz="0.0" iyy="10.0" iyz="0.0" izz="10.0"/>
+                </inertial>
             </link>
 
             <joint name="${prefix}east_joint_e1" type="prismatic">
@@ -46,6 +50,10 @@
                         <mesh scale="0.001 0.001 0.001" filename="package://rccn_kuka_robot_cell/meshes/rail/collision/east_plate_no_servo.stl"/>
                     </geometry>
                 </collision>
+                <inertial>
+                    <mass value="1.0"/> <origin xyz="0 0 0" rpy="0 0 0"/>
+                    <inertia ixx="10.0" ixy="0.0" ixz="0.0" iyy="10.0" iyz="0.0" izz="10.0"/>
+                </inertial>
             </link>
 
             <joint name="${east_prefix}attachment_joint" type="fixed">
