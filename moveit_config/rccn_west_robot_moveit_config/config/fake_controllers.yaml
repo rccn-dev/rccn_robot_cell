@@ -1,6 +1,12 @@
-controller_list:
-  - name: fake_west_robot_eax_controller
-    type: $(arg fake_execution_type)
+moveit_controller_manager: moveit_fake_controller_manager/MoveItFakeControllerManager
+
+moveit_fake_controller_manager:
+  controller_names:
+    - fake_west_robot_eax_controller
+    - fake_west_robot_controller
+
+  fake_west_robot_eax_controller:
+    type: interpolate
     joints:
       - west_joint_e1
       - west_joint_a1
@@ -9,8 +15,9 @@ controller_list:
       - west_joint_a4
       - west_joint_a5
       - west_joint_a6
-  - name: fake_west_robot_controller
-    type: $(arg fake_execution_type)
+
+  fake_west_robot_controller:
+    type: interpolate
     joints:
       - west_joint_a1
       - west_joint_a2
@@ -18,6 +25,3 @@ controller_list:
       - west_joint_a4
       - west_joint_a5
       - west_joint_a6
-initial:  # Define initial robot poses per group
-  - group: west_robot_eax
-    pose: west_robot_eax_home_0
