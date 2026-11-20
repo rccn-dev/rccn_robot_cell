@@ -124,7 +124,7 @@ if [[ ${SKIP_ROSDEP} -eq 0 ]]; then
   # Default to ROS 2 packages only (robot_description + src overlay).
   # moveit_config/ currently contains ROS 1 catkin packages, which will not resolve cleanly in ROS 2.
   ROSDEP_PATHS=()
-  for candidate in robot_description src; do
+  for candidate in pkgs/robot_description src; do
     if [[ -d "${candidate}" ]]; then
       ROSDEP_PATHS+=("${candidate}")
     fi
@@ -147,7 +147,7 @@ if [[ ${SKIP_BUILD} -eq 0 ]]; then
 
   echo "Building workspace (colcon) ..."
   # Limit to ROS 2 packages; see note above about moveit_config/ being catkin.
-  colcon build --symlink-install --base-paths robot_description src
+  colcon build --symlink-install --base-paths pkgs/robot_description src
 
   echo
   echo "Done. In your current shell, run:"

@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
-URDF_DIR="${WORKSPACE_DIR}/robot_description/rccn_kuka_robot_cell/urdf"
+URDF_DIR="${WORKSPACE_DIR}/pkgs/robot_description/rccn_kuka_robot_cell/urdf"
 
 if [[ ! -d "${URDF_DIR}" ]]; then
   echo "URDF directory not found: ${URDF_DIR}" >&2

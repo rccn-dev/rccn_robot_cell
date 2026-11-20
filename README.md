@@ -25,8 +25,8 @@ To rerun manually:
 ```sh
 mkdir -p src
 vcs import src < rccn_robot_cell.repos
-rosdep install --from-paths robot_description src -y --ignore-src
-colcon build --symlink-install --base-paths robot_description src
+rosdep install --from-paths pkgs/robot_description src -y --ignore-src
+colcon build --symlink-install --base-paths pkgs/robot_description src
 source install/setup.bash
 ```
 
