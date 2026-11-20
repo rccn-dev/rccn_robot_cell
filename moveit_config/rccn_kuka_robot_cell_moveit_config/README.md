@@ -7,7 +7,7 @@ The cell consists of two **KUKA KR300 R2500 Ultra** robots mounted on independen
 
 * **ROS Distro:** ROS 2 Jazzy
 * **Solver:** KDL (Default) 
-* **Hardware Interface:** `ros2_control` with hybrid support for Mock (Simulation) and KUKA RSI (Planned).
+* **Hardware Interface:** `ros2_control` with support for Mock (Simulation) and KUKA KUKAVARPROXY (east_on_rail only).
 
 ### Planning Groups
 | Group Name | DOF | Description | Solver |
@@ -19,3 +19,12 @@ The cell consists of two **KUKA KR300 R2500 Ultra** robots mounted on independen
 | `dual` | 14 | Both robots + Both rails (Coordinated) | None (Subgroups) |
 
 ---
+
+## Read-only joint state mode (east_on_rail)
+The MoveIt config can be started in a read-only mode that only publishes `/joint_states` from the physical East robot. Use these xacro args when launching:
+
+- `use_mock:=false`
+- `robot_ip:=<robot ip>`
+- `robot_port:=<robot port>`
+
+The ros2_control config is trimmed to `joint_state_broadcaster` only, so no trajectory controllers are spawned.

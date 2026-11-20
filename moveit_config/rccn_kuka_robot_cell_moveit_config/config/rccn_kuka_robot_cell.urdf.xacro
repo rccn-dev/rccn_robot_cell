@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rccn_kuka_robot_cell">
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+    <xacro:arg name="robot_ip" default="127.0.0.1" />
+    <xacro:arg name="robot_port" default="7000" />
+    <xacro:arg name="use_mock" default="true" />
 
     <!-- Import rccn_kuka_robot_cell urdf file -->
     <xacro:include filename="$(find rccn_kuka_robot_cell)/urdf/rccn_kuka_robot_cell.urdf" />
@@ -9,6 +12,11 @@
     <xacro:include filename="rccn_kuka_robot_cell.ros2_control.xacro" />
 
 
-    <xacro:rccn_kuka_robot_cell_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+    <xacro:rccn_kuka_robot_cell_ros2_control
+        name="FakeSystem"
+        initial_positions_file="$(arg initial_positions_file)"
+        robot_ip="$(arg robot_ip)"
+        robot_port="$(arg robot_port)"
+        use_mock="$(arg use_mock)"/>
 
 </robot>
